@@ -1,5 +1,5 @@
 # Final-Project_OS_Server_System_Admin
-Progres pengerjaan final projek os server. hasil yang ditampilkan belum 100% 
+Ini hanya Progres pengerjaan FP os server. masih ada yang harus ditambahkan
 Spesifikasi server yang digunakan 
 - Ubuntu Server 22.04.5 LTS
 - RAM 4GB
