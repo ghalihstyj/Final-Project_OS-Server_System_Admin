@@ -1,11 +1,10 @@
 # Final-Project_OS_Server_System_Admin
-Ini hanya Progres pengerjaan FP os server. masih ada yang harus ditambahkan
 Spesifikasi server yang digunakan 
 - Ubuntu Server 22.04.5 LTS
 - RAM 4GB
 - Prosesor 4CPU
 - Virtual Size 44GB
-## DAFTAR ISI
+
 
 ## 1. Instalasi OPEN SSH SERVER
 Langkah 1: Lakukan Instalasi Paket SSH Server 
@@ -32,8 +31,31 @@ Untuk melakukan remote menggunakan ssh gunakan perintah, Contoh ssh ghalih@123.4
 ```
 ssh [username]@[ip addess]
 ```
-## 2. Instalasi MAIL SERVER
-Langkah 1: 
+## 2. Instalasi FTP SERVER
+1. Instalasi FTP Server
+Langkah 1. Masuk ke terminal Ubuntu dan instal layanan vsftpd:
+Copy code
+```
+sudo apt update
+sudo apt install vsftpd
+```
+Langkah 2. Pastikan layanan vsftpd berjalan:
+Copy code
+```
+sudo systemctl start vsftpd
+sudo systemctl enable vsftpd
+```
+2. Konfigurasi FTP Server
+Langkah 1. Edit file konfigurasi vsftpd:
+Copy code
+```
+sudo nano /etc/vsftpd.conf
+```
+Langkah 3. edit file
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+
 ## 3. Instalasi WEB SERVER
 Instalasi Apache2
 Langkah 1: Instalasi Paket Apache2
@@ -161,27 +183,23 @@ Pengujian Konfigurasi Apache2
 
 
 ## 4. Instalasi DATABASE SERVER
-Langkah 1: Instalasi Paket MySQL
+1. Instalasi
+Langkah 1:Installasi paket mariadb
 ```
-apt update
-apt install mysql-server
+sudo apt-get update
+sudo apt-get install mariadb-server
 ```
-Langkah 2: Jalankan MySQL
+Langkah 2:Untuk mengamankan installasi (Opsional)
 ```
-systemctl start mysql.service
-systemctl status mysql.service
+sudo mysql_secure_installation
 ```
 
-** Konfigurasi MySQL 
-Langkah 1: 
+Langkah 3:Lakukan instalasi paket
 ```
-mysql_secure_installation
-```
-Langkah 2:Lakukan instalasi paket
-
 sudo apt-get install phpmyadmin
+```
 
-Langkah 3:Restart ulang layanan
+Langkah 4:Restart ulang layanan
 ```
 sudo systemctl restart apache2
 ```
