@@ -51,7 +51,7 @@ Copy code
 ```
 sudo nano /etc/vsftpd.conf
 ```
-# Langkah 3. edit file
+### Langkah 3. edit file
 anonymous_enable=NO
 local_enable=YES
 write_enable=YES
