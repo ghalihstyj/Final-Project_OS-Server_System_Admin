@@ -254,3 +254,35 @@ Langkah 1: Instalasi paket dns resolver
 apt-get install dnsutils
 ```
 Langkah 2: Lakukan pengujian dengan nslookup
+
+## 6. Pengaplikasian website
+1. Konfigurasi file kedalam ubuntu
+Langkah 1: pemindahan file Kita dapat memindahkan file html yang telah dibuat dengan menggunakan Filezilla FTP, atau dengan git clone website yang telah dibuat (disini saya menggunakan git clone saja).
+```
+cd /tmp && git clone "nama repository"
+```
+Langkah 2: salin direktori html kedalam direktori /var/www/html.
+```
+cp -R "nama direktori web" /var/www/html/
+```
+Langkah 3: Mengubah kepemilikan direktori web. dan Memodifikasi izin file.
+```
+chown -R www-data:www-data /var/www/html/"nama direktori web"/
+chmod -R 755 /var/www/html/"nama direktori web"/
+```
+Langkah 4: Konfigurasikan apache untuk memuat web.
+```
+cd /etc/apache2/sites-available
+cp 000-default.conf web.conf
+```
+Masuk kedalam file web.conf dan ganti DocumentRoot menjadi halaman web mu
+```
+nano web.conf
+DocumentRoot /var/www/html/"nama direktori web"
+```
+Aktifkan web.conf dan muat ulang layanan apache.
+```
+a2ensite web.conf
+systemctl reload apache2
+```
+2 Tampilan web
