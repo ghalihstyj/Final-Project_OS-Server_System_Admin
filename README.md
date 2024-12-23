@@ -109,7 +109,7 @@ Langkah 4:Restart ulang layanan
 ```
 sudo systemctl restart apache2
 ```
-
+![foto](https://raw.githubusercontent.com/ghalihstyj/Final-Project_OS-Server_System_Admin/460f6222bcb5f5b96569f2cda2b0dc0588ef896f/SS/phpmyadmin.png)
 ## 6. Pengaplikasian website
 1. Konfigurasi file kedalam ubuntu
 Langkah 1: pemindahan file Kita dapat memindahkan file html yang telah dibuat dengan menggunakan Filezilla FTP, atau dengan git clone website yang telah dibuat (disini saya menggunakan git clone saja).
