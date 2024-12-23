@@ -1,9 +1,26 @@
 # Final-Project_OS_Server_System_Admin
 Spesifikasi server yang digunakan 
-- Ubuntu Server 22.04.5 LTS
+- Ubuntu Server 22.04.5 
 - RAM 4GB
 - Prosesor 4CPU
 - Virtual Size 44GB
+
+## Layanan 
+- SSh server
+- FTP
+- Database
+- Redis
+- Apache2
+
+
+### Progres
+Tanggal 30 november install layanan server
+Tanggal 8 Desember konfigurasi layanan untuk web server 
+Tanggal 9 Desember lanjutan konfigurasi layanan
+Tanggal 16 Desember final tapi belum selesai
+Tanggal 22 ganti layanan server
+Tanggal 23 perbaikan isi github
+
 
 
 ## 1. Instalasi OPEN SSH SERVER
@@ -87,7 +104,8 @@ Konfigurasi ufw
 ufw allow in "Apache"
 ufw status
 ```
-
+Akses Apache2 di browser dengan ketik ip server anda 
+![foto](https://raw.githubusercontent.com/ghalihstyj/Final-Project_OS-Server_System_Admin/dc277975a54be37aa930a3f1e49d420a7fe0c1e9/3.png)
 ## 4. Instalasi DATABASE SERVER
 1. Instalasi
 Langkah 1:Installasi paket mariadb
@@ -110,6 +128,29 @@ Langkah 4:Restart ulang layanan
 sudo systemctl restart apache2
 ```
 ![foto](https://raw.githubusercontent.com/ghalihstyj/Final-Project_OS-Server_System_Admin/460f6222bcb5f5b96569f2cda2b0dc0588ef896f/SS/phpmyadmin.png)
+
+## Redis (Cache Server)
+1.Instal Redis dengan perintah berikut:
+```
+sudo apt install redis-server -y
+```
+2.Verifikasi instalasi Redis:
+```
+redis-server --version
+```
+3.Mulai dan Aktifkan Redis
+```
+sudo systemctl start redis
+```
+4.Aktifkan layanan Redis agar berjalan otomatis saat booting:
+```
+sudo systemctl enable redis
+```
+5.Periksa status Redis:
+```
+sudo systemctl status redis
+```
+
 ## 6. Pengaplikasian website
 1. Konfigurasi file kedalam ubuntu
 Langkah 1: pemindahan file Kita dapat memindahkan file html yang telah dibuat dengan menggunakan Filezilla FTP, atau dengan git clone website yang telah dibuat (disini saya menggunakan git clone saja).
@@ -140,4 +181,15 @@ Aktifkan web.conf dan muat ulang layanan apache.
 a2ensite web.conf
 systemctl reload apache2
 ```
-2 Tampilan web
+#### Tampilan web
+Tampilan Home
+![foto](https://raw.githubusercontent.com/ghalihstyj/Final-Project_OS-Server_System_Admin/460f6222bcb5f5b96569f2cda2b0dc0588ef896f/SS/awal.png)
+
+Tampilan Paket 
+![foto](https://raw.githubusercontent.com/ghalihstyj/Final-Project_OS-Server_System_Admin/460f6222bcb5f5b96569f2cda2b0dc0588ef896f/SS/paket.png)
+
+Tampilan Kupon
+![foto](https://raw.githubusercontent.com/ghalihstyj/Final-Project_OS-Server_System_Admin/460f6222bcb5f5b96569f2cda2b0dc0588ef896f/SS/kupon.png)
+
+Tampilan Kontak 
+![foto](https://raw.githubusercontent.com/ghalihstyj/Final-Project_OS-Server_System_Admin/460f6222bcb5f5b96569f2cda2b0dc0588ef896f/SS/kontak.png)
