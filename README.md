@@ -129,7 +129,7 @@ sudo systemctl restart apache2
 ```
 ![foto](https://raw.githubusercontent.com/ghalihstyj/Final-Project_OS-Server_System_Admin/460f6222bcb5f5b96569f2cda2b0dc0588ef896f/SS/phpmyadmin.png)
 
-## Redis (Cache Server)
+## 5. Redis (Cache Server)
 1.Instal Redis dengan perintah berikut:
 ```
 sudo apt install redis-server -y
